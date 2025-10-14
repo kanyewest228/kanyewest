@@ -4,9 +4,16 @@ const cardsShuffle = [...cardsImage, ...cardsImage].sort(() => Math.random() - 0
 
 let parrent = document.getElementById('parent')
 while (cardsShuffle.length > 0) {
-    const newEl = parrent.appendChild(document.createElement('img'));
-    newEl.src = cardsShuffle[0]
+    const newElDiv = parrent.appendChild(document.createElement('div'))
+    newElDiv.style.position = 'relative '
+    const newElImgFront = newElDiv.appendChild(document.createElement('img'))
+    const newElImgBack = newElDiv.appendChild(document.createElement('img'))
+    newElImgFront.src = cardsShuffle[0]
+    newElImgFront.classList.add('hid')
+    newElImgBack.src = 'assets/css/img/back.png'
+    newElImgBack.classList.add('absolute')
     cardsShuffle.shift()
 }
 
-//
+
+

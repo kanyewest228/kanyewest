@@ -17,7 +17,6 @@ img {
     width: 158px;
     height: 158px;
     border: 1px solid black;
-    cursor: pointer;
 }
 
 h1 {
@@ -40,4 +39,24 @@ section {
     background: white;
     align-items: center;
     margin: 10px 0;
+}
+
+.hid {
+    visibility: hidden;
+}
+
+.absolute {
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+}
+
+.card {
+    position: relative;
+    cursor: pointer;
+}
+
+.card img {
+    transition: opacity 0.3s;
 }
