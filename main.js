@@ -2,18 +2,32 @@ const cardsImage = ['img/crab.jpg', 'img/dolphin.jpg', 'img/fooga.jpg', 'img/med
 const cardsShuffle = [...cardsImage, ...cardsImage].sort(() => Math.random() - 0.5)
 
 
-let parrent = document.getElementById('parent')
+let parent = document.getElementById('parent')
+
+
 while (cardsShuffle.length > 0) {
-    const newElDiv = parrent.appendChild(document.createElement('div'))
-    newElDiv.style.position = 'relative '
-    const newElImgFront = newElDiv.appendChild(document.createElement('img'))
-    const newElImgBack = newElDiv.appendChild(document.createElement('img'))
-    newElImgFront.src = cardsShuffle[0]
-    newElImgFront.classList.add('hid')
-    newElImgBack.src = 'assets/css/img/back.png'
-    newElImgBack.classList.add('absolute')
+    const cardDiv = parent.appendChild(document.createElement('div'))
+    cardDiv.style.position = 'relative'
+    cardDiv.classList.add = 'card'
+
+    const frontImg = cardDiv.appendChild(document.createElement('img'))
+    frontImg.src = cardsShuffle[0]
+    frontImg.classList.add('hid')
+    frontImg.classList.add = 'frontImg'
+
+    const backImg = cardDiv.appendChild(document.createElement('img'))
+    backImg.src = 'assets/css/img/back.png'
+    backImg.classList.add('absolute')
+    backImg.classList.add = 'backImg'
+
+
+    cardDiv.addEventListener('click', () => {
+        frontImg.classList.toggle('hid')
+        backImg.classList.toggle('hid')
+        console.log("123")
+    })
+
     cardsShuffle.shift()
 }
-
 
 
