@@ -5,7 +5,7 @@
 }
 
 body {
-    background: lightcyan;
+    background: aliceblue;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,13 +20,20 @@ img {
     transition: .5s;
 }
 
-.trans {
-    transform: rotateY(180deg);
-}
 
 h1 {
     font-family: sans-serif;
     font-size: 50px;
+}
+
+button {
+    padding: 10px 30px;
+    background: aliceblue;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 18px;
+    font-size: 40px;
+    font-weight: bold;
     cursor: pointer;
 }
 
@@ -39,7 +46,7 @@ section {
     justify-content: center;
     gap: 3px;
     flex-wrap: wrap;
-    box-shadow: 0 0 20px black;
+    box-shadow: 0 0 10px black;
     border-radius: 10px;
     background: white;
     align-items: center;
@@ -61,8 +68,6 @@ section {
     position: relative;
     cursor: pointer;
     user-select: none;
-}
-
-.card img {
-    transition: opacity 0.3s;
+    transform-style: preserve-3d;
+    transition: .5s;
 }
