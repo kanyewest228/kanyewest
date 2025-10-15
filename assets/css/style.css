@@ -5,7 +5,8 @@
 }
 
 body {
-    background: lightcyan;
+    background: #EEAECA;
+    background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%););
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,26 +17,43 @@ body {
 img {
     width: 158px;
     height: 158px;
-    border: 1px solid black;
-
+    transform-style: preserve-3d;
+    transition: .1s;
 }
 
 h1 {
     font-family: sans-serif;
     font-size: 50px;
     cursor: pointer;
+    color: white;
+}
+
+button {
+    padding: 10px 25px;
+    font-size: 40px;
+    cursor: pointer;
+    background: #EEAECA;
+    background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+}
+
+.matched {
+    filter: blur(5px);
+    scale: 0.9;
 }
 
 section {
-    padding: 4px;
-    border: 1px solid black;
-    width: 660px;
-    height: 660px;
+    padding: 10px;
+    width:700px;
+    height: 700px;
     display: flex;
     justify-content: center;
-    gap: 3px;
+    gap: 10px;
     flex-wrap: wrap;
-    box-shadow: 0 0 20px black;
+    box-shadow: 0 0 20px rgba(256, 256, 256, 0.5);
     border-radius: 10px;
     background: white;
     align-items: center;
@@ -43,7 +61,13 @@ section {
 }
 
 .hid {
-    visibility: hidden;
+    opacity: 0;
+    transform: rotateY(180deg);
+}
+
+.show {
+    opacity: 1;
+    transform: rotateY(0deg);
 }
 
 .absolute {
@@ -57,8 +81,7 @@ section {
     position: relative;
     cursor: pointer;
     user-select: none;
+    transition: .3s;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
-.card img {
-    transition: opacity 0.3s;
-}
