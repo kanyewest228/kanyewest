@@ -5,7 +5,7 @@
 }
 
 body {
-    background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%););
+    background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,7 +47,7 @@ img {
     position: relative;
     cursor: pointer;
     user-select: none;
-    transition: .3s;
+    transition: .5s;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
@@ -57,16 +57,26 @@ button {
     padding: 10px 25px;
     font-size: 40px;
     cursor: pointer;
-    background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+    background: #cfb4d5;
     color: white;
     font-weight: bold;
     border: none;
     border-radius: 50px;
+    transition: .5s;
+}
+
+button:hover {
+    background: #96bae8 ;
 }
 
 .restartBtn {
     position: absolute;
     z-index: 100;
+}
+
+.opacity0 {
+    opacity: 0;
+    transform: translateY(50px);
 }
 
 /*SECTION*/

@@ -1,6 +1,15 @@
 let parent = document.getElementById('parent')
 
+function buttonClick() {
+    let button = document.getElementById('strtBtn')
+    button.classList.add('opacity0')
+    setTimeout(()=> {
+        startGame()
+    },500)
+}
+
 function startGame() {
+
     parent.innerHTML = ''
 
     const cardsImage = ['img/crab.jpg', 'img/dolphin.jpg', 'img/fooga.jpg', 'img/medusa.jpg', 'img/octopus.jpg',  'img/shark.jpg', 'img/whale.jpg', 'img/zola.jpg']
@@ -8,11 +17,11 @@ function startGame() {
 
     let cardDiv = []
 
-
     while (cardsShuffle.length > 0) {
         cardDiv = parent.appendChild(document.createElement('div'))
         cardDiv.style.position = 'relative'
         cardDiv.className = 'card'
+        cardDiv.classList.add('opacity0')
         cardDiv.setAttribute('draggable', 'false')
 
         const frontImg = cardDiv.appendChild(document.createElement('img'))
@@ -26,10 +35,20 @@ function startGame() {
         backImg.classList.add('show')
         backImg.setAttribute('draggable', 'false')
 
-
         cardDiv.addEventListener('click', flipCard)
 
         cardsShuffle.shift()
+    }
+
+    appearCards()
+
+    function appearCards () {
+        setTimeout(()=> {
+            let cards = parent.querySelectorAll('div');
+            cards.forEach(card => {
+                card.classList.remove('opacity0')
+            })
+        }, 100)
     }
 }
 
