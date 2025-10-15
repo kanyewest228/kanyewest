@@ -1,6 +1,6 @@
-function startGame() {
+let parent = document.getElementById('parent')
 
-    let parent = document.getElementById('parent')
+function startGame() {
     parent.innerHTML = ''
 
     const cardsImage = ['img/crab.jpg', 'img/dolphin.jpg', 'img/fooga.jpg', 'img/medusa.jpg', 'img/octopus.jpg',  'img/shark.jpg', 'img/whale.jpg', 'img/zola.jpg']
@@ -36,6 +36,8 @@ function startGame() {
 
 let deckBlocked = false
 let flippedCards = []
+let matchedCards = 0;
+
 function flipCard () {
     if (deckBlocked) return
     if (this === flippedCards[0]) return
@@ -63,6 +65,7 @@ function checkMatch () {
             card2.removeEventListener('click', flipCard)
             card1.classList.add('matched')
             card2.classList.add('matched')
+            matchedCards++
         } else {
             card1.firstChild.classList.toggle('hid')
             card1.lastChild.classList.toggle('hid')
@@ -72,7 +75,14 @@ function checkMatch () {
 
         flippedCards = []
         deckBlocked = false
+
+        if (matchedCards === 8) {
+            setTimeout(() => {
+                let restartButton = parent.appendChild(document.createElement('button'))
+                restartButton.addEventListener('click', startGame)
+                restartButton.innerText = 'Restart'
+                restartButton.classList.add('restartBtn')
+            }, 2000)
+        }
     }, 1000)
-
-
 }
